@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">记忆大师</string>
+    <string name="click_to_skip">点击跳过</string>
+
+    <string name="tab_train">训练</string>
+    <string name="tab_history">历史</string>
+    <string name="tab_discovery">发现</string>
+    <string name="tab_edit">设置</string>
 </resources>

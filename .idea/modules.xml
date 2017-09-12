@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MemoryTrain.iml" filepath="$PROJECT_DIR$/MemoryTrain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/androidfastcoding_java/androidfastcoding_java.iml" filepath="$PROJECT_DIR$/androidfastcoding_java/androidfastcoding_java.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fastcoding_kotlin/fastcoding_kotlin.iml" filepath="$PROJECT_DIR$/fastcoding_kotlin/fastcoding_kotlin.iml" />
     </modules>
   </component>
 </project>
