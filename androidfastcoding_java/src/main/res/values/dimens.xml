@@ -38,6 +38,7 @@
     <dimen name="s_12">12sp</dimen>
     <dimen name="s_14">14sp</dimen>
     <dimen name="s_16">16sp</dimen>
+    <dimen name="s_17">17sp</dimen>
     <dimen name="s_18">18sp</dimen>
     <dimen name="s_20">20sp</dimen>
     <!-- margin params -->

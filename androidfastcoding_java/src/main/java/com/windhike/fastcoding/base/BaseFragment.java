@@ -17,11 +17,15 @@ import butterknife.Unbinder;
 public abstract class BaseFragment extends Fragment{
     protected View mRootView;
     private Unbinder unbinder;
+    private ToolbarBuilder mToolbarBuilder;
 
     public String getTransactionTag() {
         return getClass().getSimpleName();
     }
 
+    public ToolbarBuilder getToolbarBuilder() {
+        return mToolbarBuilder;
+    }
 
     @Nullable
     @Override
@@ -29,6 +33,13 @@ public abstract class BaseFragment extends Fragment{
         if (mRootView == null) {
             mRootView = inflater.inflate(getLayouId(),container,false);
             unbinder = ButterKnife.bind(this, mRootView);
+            mToolbarBuilder = new ToolbarBuilder((ViewGroup) mRootView);
+            mToolbarBuilder.withLeftClick(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onBackPressed();
+                }
+            });
             initView();
         }else if(!isSubPage()){
             ViewGroup parent = (ViewGroup) mRootView.getParent();
@@ -36,6 +47,8 @@ public abstract class BaseFragment extends Fragment{
         }
         return mRootView;
     }
+
+
 
     protected boolean isSubPage() {
         return false;

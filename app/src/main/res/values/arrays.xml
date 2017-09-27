@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <integer-array name="poker_img">
+        //梅花
+        <item>@mipmap/clubs_1</item>
+        <item>@mipmap/clubs_2</item>
+        <item>@mipmap/clubs_3</item>
+        <item>@mipmap/clubs_4</item>
+        <item>@mipmap/clubs_5</item>
+        <item>@mipmap/clubs_6</item>
+        <item>@mipmap/clubs_7</item>
+        <item>@mipmap/clubs_8</item>
+        <item>@mipmap/clubs_9</item>
+        <item>@mipmap/clubs_10</item>
+        //花牌
+        <item>@mipmap/clubs_j</item>
+        <item>@mipmap/clubs_q</item>
+        <item>@mipmap/clubs_k</item>
+        //方块
+        <item>@mipmap/diamonds_1</item>
+        <item>@mipmap/diamonds_2</item>
+        <item>@mipmap/diamonds_3</item>
+        <item>@mipmap/diamonds_4</item>
+        <item>@mipmap/diamonds_5</item>
+        <item>@mipmap/diamonds_6</item>
+        <item>@mipmap/diamonds_7</item>
+        <item>@mipmap/diamonds_8</item>
+        <item>@mipmap/diamonds_9</item>
+        <item>@mipmap/diamonds_10</item>
+        //花牌
+        <item>@mipmap/diamonds_j</item>
+        <item>@mipmap/diamonds_q</item>
+        <item>@mipmap/diamonds_k</item>
+        //黑桃
+        <item>@mipmap/spades_1</item>
+        <item>@mipmap/spades_2</item>
+        <item>@mipmap/spades_3</item>
+        <item>@mipmap/spades_4</item>
+        <item>@mipmap/spades_5</item>
+        <item>@mipmap/spades_6</item>
+        <item>@mipmap/spades_7</item>
+        <item>@mipmap/spades_8</item>
+        <item>@mipmap/spades_9</item>
+        <item>@mipmap/spades_10</item>
+        //花牌
+        <item>@mipmap/spades_j</item>
+        <item>@mipmap/spades_q</item>
+        <item>@mipmap/spades_k</item>
+        //红桃
+        <item>@mipmap/hearts_1</item>
+        <item>@mipmap/hearts_2</item>
+        <item>@mipmap/hearts_3</item>
+        <item>@mipmap/hearts_4</item>
+        <item>@mipmap/hearts_5</item>
+        <item>@mipmap/hearts_6</item>
+        <item>@mipmap/hearts_7</item>
+        <item>@mipmap/hearts_8</item>
+        <item>@mipmap/hearts_9</item>
+        <item>@mipmap/hearts_10</item>
+        //花牌
+        <item>@mipmap/hearts_j</item>
+        <item>@mipmap/hearts_q</item>
+        <item>@mipmap/hearts_k</item>
+        //小王
+        <item>@mipmap/black_joker</item>
+        //大王
+        <item>@mipmap/red_joker</item>
+    </integer-array>
+
+</resources>

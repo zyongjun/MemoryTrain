@@ -16,8 +16,16 @@ class HistoryTabFragment() : BaseFragment() {
         return true;
     }
 
+    override fun initView() {
+        super.initView()
+        toolbarBuilder.showLeft(false)
+                .showRight(false)
+                .withTitle(getString(R.string.title_history))
+                .show()
+    }
+
     override fun getLayouId(): Int {
-        return R.layout.fragment_content
+        return R.layout.fragment_tab_history
     }
 
 }

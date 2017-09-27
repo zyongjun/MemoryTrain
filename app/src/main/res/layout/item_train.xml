@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/LightItemLayout"
+    xmlns:tools="http://schemas.android.com/tools">
+    <TextView
+        android:id="@+id/tvName"
+        style="@style/LightItemLabelText"
+        android:layout_centerInParent="true"
+        tools:text="@string/card_train"/>
+    <ImageView style="@style/RightArrowIcon" />
+</RelativeLayout>

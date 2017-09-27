@@ -83,6 +83,14 @@ public class CommonFragmentActivity extends BaseFragmentActivity {
         }
     }
 
+    public static Intent obtainStartIntent(Context context, String fname, Bundle args) {
+        Intent intent = new Intent();
+        intent.setClass(context, CommonFragmentActivity.class);
+        intent.putExtra(BUNDLE_KEY_NAME, fname);
+        intent.putExtra(BUNDLE_KEY_ARGS, args);
+        return intent;
+    }
+
     public static void start(Context context,String fname, Bundle args) {
         start(context,fname,args,-1);
     }

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvPokerSelect"
+        android:layout_above="@+id/llBottom"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+    <LinearLayout
+        android:id="@+id/llBottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btnSelect"
+            android:layout_width="0px"
+            android:layout_height="@dimen/d_35"
+            android:layout_weight="1"
+            android:layout_marginTop="@dimen/d_5"
+            android:background="@drawable/shape_red_button"
+            android:enabled="true"
+            android:text="@string/confirm"
+            android:textColor="@drawable/selector_login_button"
+            android:textSize="@dimen/s_17" />
+    </LinearLayout>
+</RelativeLayout>

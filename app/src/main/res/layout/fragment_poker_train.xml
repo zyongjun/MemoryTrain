@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include
+        android:id="@+id/vHead"
+        layout="@layout/app_bar"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvPoker"
+        android:layout_below="@+id/vHead"
+        android:layout_above="@+id/llBottom"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+    <LinearLayout
+        android:id="@+id/llBottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btnFinished"
+            android:layout_width="0px"
+            android:layout_height="@dimen/d_35"
+            android:layout_weight="1"
+            android:layout_marginTop="@dimen/d_5"
+            android:background="@drawable/shape_red_button"
+            android:enabled="false"
+            android:text="@string/label_finished"
+            android:textColor="@drawable/selector_login_button"
+            android:textSize="@dimen/s_17" />
+        <Chronometer
+            android:id="@+id/chronTimmer"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="@dimen/d_20"
+            android:layout_marginTop="@dimen/d_5"
+            android:format="%s"
+            android:gravity="center"
+            android:background="@drawable/shape_red_button"
+            android:textColor="@color/white"/>
+        <Button
+            android:id="@+id/btnRestore"
+            android:layout_width="0px"
+            android:layout_height="@dimen/d_35"
+            android:layout_weight="1"
+            android:layout_marginTop="@dimen/d_5"
+            android:background="@drawable/shape_red_button"
+            android:enabled="true"
+            android:text="@string/btn_restore"
+            android:textColor="@drawable/selector_login_button"
+            android:textSize="@dimen/s_17" />
+    </LinearLayout>
+</RelativeLayout>

@@ -30,13 +30,13 @@ public class TrainApplication extends BaseApplication {
     }
 
     private void configUmeng() {
-        MobclickAgent.setDebugMode( true );
-        String channel =  "test";;
-        MobclickAgent.UMAnalyticsConfig config = new MobclickAgent.UMAnalyticsConfig(this,
-                "5966e53caed1793fed000288",channel,
-                 MobclickAgent.EScenarioType.E_UM_ANALYTICS_OEM,true);
-
-        MobclickAgent. startWithConfigure(config);
+//        MobclickAgent.setDebugMode( true );
+//        String channel =  "test";;
+//        MobclickAgent.UMAnalyticsConfig config = new MobclickAgent.UMAnalyticsConfig(this,
+//                "5966e53caed1793fed000288",channel,
+//                 MobclickAgent.EScenarioType.E_UM_ANALYTICS_OEM,true);
+//
+//        MobclickAgent. startWithConfigure(config);
     }
 
     @Override

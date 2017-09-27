@@ -6,4 +6,14 @@
     <string name="tab_history">历史</string>
     <string name="tab_discovery">发现</string>
     <string name="tab_edit">设置</string>
+    <string name="card_train">扑克训练</string>
+    <string name="shuffle">洗牌</string>
+    <string name="btn_restore">复原</string>
+    <string name="confirm">选择</string>
+    <string name="title_train">记忆训练</string>
+    <string name="title_history">训练历史</string>
+    <string name="title_discovery">记忆宝典</string>
+    <string name="title_setting">我的设置</string>
+    <string name="label_finished">完成</string>
+    <string name="see_record">查看结果</string>
 </resources>
