@@ -15,8 +15,6 @@ import com.windhike.fastcoding.CommonFragmentActivity;
 import com.zyongjun.memorytrain.R;
 
 import butterknife.BindView;
-import rx.Observable;
-import rx.Subscriber;
 
 /**
  * author:gzzyj on 2017/7/14 0014.
@@ -121,14 +119,6 @@ public class WelcomeFragment extends BasePermissionFragment implements SplashADL
 //        canJump = false;
 //    }
 
-    public Observable<Intent> lauchTask() {
-        return Observable.create(new Observable.OnSubscribe<Intent>() {
-            @Override
-            public void call(Subscriber<? super Intent> subscriber) {
-
-            }
-        });
-    }
 
     @Override
     public void onDestroy() {

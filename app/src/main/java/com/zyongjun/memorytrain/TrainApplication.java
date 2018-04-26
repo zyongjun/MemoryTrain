@@ -1,7 +1,6 @@
 package com.zyongjun.memorytrain;
 
 import android.app.Application;
-import com.umeng.analytics.MobclickAgent;
 import com.windhike.fastcoding.BaseApplication;
 //import com.facebook.stetho.Stetho;
 
