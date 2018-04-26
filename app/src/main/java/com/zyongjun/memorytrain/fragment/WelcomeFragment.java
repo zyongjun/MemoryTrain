@@ -45,25 +45,8 @@ public class WelcomeFragment extends BasePermissionFragment implements SplashADL
         super.initView();
         llLogo.setAlpha(0);
         llLogo.animate().alpha(1).setDuration(3000).start();
-//        checkAndRequestPermission(Manifest.permission.CAMERA,Manifest.permission.READ_PHONE_STATE);
-        checkAndRequestPermission(Manifest.permission.READ_PHONE_STATE,Manifest.permission.READ_EXTERNAL_STORAGE,Manifest.permission.CAMERA,Manifest.permission.ACCESS_FINE_LOCATION);
-//        lauchTask().observeOn(AndroidSchedulers.mainThread())
-//                .doOnCompleted(new Action0() {
-//                    @Override
-//                    public void call() {
-//
-//                    }
-//                }).subscribe(new Action1<Intent>() {
-//                    @Override
-//                    public void call(Intent intent) {
-//
-//                    }
-//                }, new Action1<Throwable>() {
-//                    @Override
-//                    public void call(Throwable throwable) {
-//
-//                    }
-//                });
+        checkAndRequestPermission(Manifest.permission.READ_PHONE_STATE);
+//        checkAndRequestPermission(Manifest.permission.READ_PHONE_STATE,Manifest.permission.READ_EXTERNAL_STORAGE,Manifest.permission.CAMERA,Manifest.permission.ACCESS_FINE_LOCATION);
     }
 
     @Override
