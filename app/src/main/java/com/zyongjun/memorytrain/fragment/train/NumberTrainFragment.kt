@@ -4,13 +4,15 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.widget.GridLayoutManager
 import android.view.View
 import com.windhike.fastcoding.CommonFragmentActivity
 import com.windhike.fastcoding.base.BaseFragment
 import com.zyongjun.memorytrain.R
 import com.zyongjun.memorytrain.adapter.NumberTrainAdapter
+import com.zyongjun.memorytrain.widget.HorizontalPageLayoutManager
 import kotlinx.android.synthetic.main.fragment_poker_train.*
+import com.zyongjun.memorytrain.widget.PagingItemDecoration
+import com.zyongjun.memorytrain.widget.PagingScrollHelper
 
 /**
  * author:gzzyj on 2017/9/13 0013.
@@ -19,8 +21,8 @@ import kotlinx.android.synthetic.main.fragment_poker_train.*
 class NumberTrainFragment : BaseFragment() {
 
     val mAdapter by lazy {
-        NumberTrainAdapter() {
-//            startActivityForResult(NumberSelectFragment.obtainStartIntent(activity), REQUEST_SELECT_POKER)
+        NumberTrainAdapter() {  s: String ->
+            btnRestore.setText(s)
         }
     }
 
@@ -32,7 +34,6 @@ class NumberTrainFragment : BaseFragment() {
             val bundle = Bundle()
             bundle.putInt(KEY_REMEMBER_TYPE,numberCount)
             CommonFragmentActivity.start(context, NumberTrainFragment::class.java.name, bundle)
-//            CommonFragmentActivity.start(context, NumberTrainFragment::javaClass.name,null)
         }
     }
 
@@ -51,23 +52,28 @@ class NumberTrainFragment : BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
         toolbarBuilder.showLeft(true)
                 .withTitle("数字训练")
-                .showRight(true)
-                .withRight(getString(R.string.see_record))
+                .showRight(false)
                 .show()
-        rvPoker.layoutManager = GridLayoutManager(activity, mAdapter.obtainGridSpanCount())
+
+        val layoutManager= HorizontalPageLayoutManager(1,3)
+        val pagingItemDecoration = PagingItemDecoration(activity, layoutManager)
+        val scrollHelper = PagingScrollHelper()
+        scrollHelper.setUpRecycleView(rvPoker)
+        //设置页面滚动监听
+        scrollHelper.setOnPageChangeListener{
+
+        }
+        rvPoker.addItemDecoration(pagingItemDecoration)
+        rvPoker.layoutManager = layoutManager
         rvPoker.adapter = mAdapter
         chronTimmer.start()
         btnRestore.setOnClickListener {
-            btnFinished.isEnabled = true
-            it.isEnabled = false
-//            mAdapter.switchMode()
+            chronTimmer.stop()
+            mAdapter.seeResult()
         }
 
         btnFinished.setOnClickListener {
-            if (!btnFinished.isSelected) {
-                chronTimmer.stop()
-                mAdapter.checkResult(chronTimmer)
-            }
+            chronTimmer.stop()
         }
     }
 
@@ -77,10 +83,11 @@ class NumberTrainFragment : BaseFragment() {
             return
         }
         if (requestCode == REQUEST_SELECT_POKER) {
-//            val selectIndex = data?.getStringExtra(Intent.EXTRA_RETURN_RESULT)
-//            mAdapter.restore(selectIndex?:"-1")
+
         }
     }
 
 }
+
+
 

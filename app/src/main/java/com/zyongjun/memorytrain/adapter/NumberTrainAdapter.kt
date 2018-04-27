@@ -16,7 +16,7 @@ import java.util.*
  * email:zhyongjun@windhike.cn
  */
 
-class NumberTrainAdapter(var callback:(postion:Int)->Unit)
+class NumberTrainAdapter(var callback:(countInfo:String)->Unit)
     : RecyclerView.Adapter<NumberTrainAdapter.CardHolder>(){
     val mOrderedPokerList = arrayListOf<String>()
     var restorePokerList:MutableSet<String> = mutableSetOf<String>()
@@ -28,9 +28,6 @@ class NumberTrainAdapter(var callback:(postion:Int)->Unit)
         }
         shuffle()
         restorePokerList.clear()
-        mOrderedPokerList.forEach {
-            restorePokerList.add("-1")
-        }
     }
 
     fun shuffle() {
@@ -50,6 +47,15 @@ class NumberTrainAdapter(var callback:(postion:Int)->Unit)
         return 8
     }
 
+    fun seeResult() {
+        val countInfo = "${restorePokerList.size}/${mOrderedPokerList.size}"
+        callback(countInfo)
+        mOrderedPokerList.clear()
+        restorePokerList.forEach {
+            mOrderedPokerList.add(it)
+        }
+        notifyDataSetChanged()
+    }
     fun checkResult(chronTimmer: Chronometer): RememberRecord {
         var rightCount = 0
         restorePokerList.forEachIndexed { index, card ->
@@ -73,7 +79,6 @@ class NumberTrainAdapter(var callback:(postion:Int)->Unit)
         holder.bindData(mOrderedPokerList[position],restorePokerList)
         holder.itemView.setOnClickListener {
             restorePokerList.add(mOrderedPokerList[position])
-            callback(position)
             notifyDataSetChanged()
         }
     }
