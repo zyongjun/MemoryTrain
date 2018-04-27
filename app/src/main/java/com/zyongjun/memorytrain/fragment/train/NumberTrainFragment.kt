@@ -38,7 +38,7 @@ class NumberTrainFragment : BaseFragment() {
     }
 
     override fun getLayouId(): Int {
-        return R.layout.fragment_poker_train
+        return R.layout.fragment_number_train
     }
 
     override fun onAttach(context: Context) {

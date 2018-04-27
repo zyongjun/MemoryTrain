@@ -8,10 +8,9 @@
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rvPoker"
-        android:layout_below="@+id/vHead"
-        android:layout_above="@+id/llBottom"
+        android:layout_centerInParent="true"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="200dp"
         />
     <LinearLayout
         android:id="@+id/llBottom"
