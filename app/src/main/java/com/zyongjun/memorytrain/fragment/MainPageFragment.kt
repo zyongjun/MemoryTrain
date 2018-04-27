@@ -13,7 +13,7 @@ import com.zyongjun.memorytrain.fragment.history.HistoryTabFragment
 import com.zyongjun.memorytrain.fragment.setting.SettingTabFragment
 import com.zyongjun.memorytrain.fragment.train.TrainTabFragment
 import kotlinx.android.synthetic.main.fragment_main.*
-import kotlinx.android.synthetic.main.tab_button.*
+//import kotlinx.android.synthetic.main.tab_button.*
 
 /**
  * author:gzzyj on 2017/9/12 0012.

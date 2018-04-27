@@ -20,7 +20,7 @@ class PhoneTrainFragment : BaseFragment() {
 
     val mAdapter by lazy {
         NumberTrainAdapter() {
-            startActivityForResult(NumberSelectFragment.obtainStartIntent(activity), REQUEST_SELECT_POKER)
+//            startActivityForResult(NumberSelectFragment.obtainStartIntent(activity), REQUEST_SELECT_POKER)
         }
     }
 
@@ -58,9 +58,9 @@ class PhoneTrainFragment : BaseFragment() {
         rvPoker.adapter = mAdapter
         chronTimmer.start()
         btnRestore.setOnClickListener {
-            btnFinished.isEnabled = true
-            it.isEnabled = false
-            mAdapter.switchMode()
+//            btnFinished.isEnabled = true
+//            it.isEnabled = false
+//            mAdapter.switchMode()
         }
 
         btnFinished.setOnClickListener {
@@ -77,8 +77,8 @@ class PhoneTrainFragment : BaseFragment() {
             return
         }
         if (requestCode == REQUEST_SELECT_POKER) {
-            val selectIndex = data?.getStringExtra(Intent.EXTRA_RETURN_RESULT)
-            mAdapter.restore(selectIndex?:"-1")
+//            val selectIndex = data?.getStringExtra(Intent.EXTRA_RETURN_RESULT)
+//            mAdapter.restore(selectIndex?:"-1")
         }
     }
 

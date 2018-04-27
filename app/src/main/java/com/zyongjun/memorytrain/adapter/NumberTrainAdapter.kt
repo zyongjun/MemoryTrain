@@ -19,9 +19,7 @@ import java.util.*
 class NumberTrainAdapter(var callback:(postion:Int)->Unit)
     : RecyclerView.Adapter<NumberTrainAdapter.CardHolder>(){
     val mOrderedPokerList = arrayListOf<String>()
-    var isRememberMode:Boolean = true
-    var indexRequestSelect = 0
-    var restorePokerList:MutableList<String> = mutableListOf()
+    var restorePokerList:MutableSet<String> = mutableSetOf<String>()
     var rememberCount = 0
 
     fun initData() {
@@ -52,11 +50,6 @@ class NumberTrainAdapter(var callback:(postion:Int)->Unit)
         return 8
     }
 
-    fun restore(restoreItem: String) {
-        restorePokerList[indexRequestSelect] = restoreItem
-        notifyDataSetChanged()
-    }
-
     fun checkResult(chronTimmer: Chronometer): RememberRecord {
         var rightCount = 0
         restorePokerList.forEachIndexed { index, card ->
@@ -75,34 +68,21 @@ class NumberTrainAdapter(var callback:(postion:Int)->Unit)
         return CardHolder(LayoutInflater.from(parent!!.context).inflate(R.layout.item_number, parent, false))
     }
 
-    fun switchMode() {
-        isRememberMode = !isRememberMode
-        notifyDataSetChanged()
-    }
 
     override fun onBindViewHolder(holder: CardHolder, position: Int) {
-        if(isRememberMode){
-            holder.bindData(mOrderedPokerList[position])
-            holder.itemView.setOnClickListener(null)
-        }else{
-            holder.bindData(restorePokerList[position])
-            holder.itemView.setOnClickListener {
-                indexRequestSelect = position
-                callback(position)
-            }
+        holder.bindData(mOrderedPokerList[position],restorePokerList)
+        holder.itemView.setOnClickListener {
+            restorePokerList.add(mOrderedPokerList[position])
+            callback(position)
+            notifyDataSetChanged()
         }
     }
 
     class CardHolder(view: View): RecyclerView.ViewHolder(view){
-        fun bindData(poker: String) {
-            if(poker.equals("-1")){
-                itemView.tvCard.visibility = View.GONE
-                itemView.rlAdd.visibility = View.VISIBLE
-            }else{
-                itemView.rlAdd.visibility = View.GONE
-                itemView.tvCard.visibility = View.VISIBLE
-                itemView.tvCard.setText(poker)
-            }
+        fun bindData(poker: String,unRememberNumber:MutableSet<String>) {
+            itemView.ivCuo.visibility = if(unRememberNumber.contains(poker)) View.VISIBLE else View.GONE
+            itemView.tvCard.visibility = View.VISIBLE
+            itemView.tvCard.setText(poker)
         }
     }
 }

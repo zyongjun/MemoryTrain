@@ -20,7 +20,7 @@ class NumberTrainFragment : BaseFragment() {
 
     val mAdapter by lazy {
         NumberTrainAdapter() {
-            startActivityForResult(NumberSelectFragment.obtainStartIntent(activity), REQUEST_SELECT_POKER)
+//            startActivityForResult(NumberSelectFragment.obtainStartIntent(activity), REQUEST_SELECT_POKER)
         }
     }
 
@@ -60,7 +60,7 @@ class NumberTrainFragment : BaseFragment() {
         btnRestore.setOnClickListener {
             btnFinished.isEnabled = true
             it.isEnabled = false
-            mAdapter.switchMode()
+//            mAdapter.switchMode()
         }
 
         btnFinished.setOnClickListener {
@@ -77,8 +77,8 @@ class NumberTrainFragment : BaseFragment() {
             return
         }
         if (requestCode == REQUEST_SELECT_POKER) {
-            val selectIndex = data?.getStringExtra(Intent.EXTRA_RETURN_RESULT)
-            mAdapter.restore(selectIndex?:"-1")
+//            val selectIndex = data?.getStringExtra(Intent.EXTRA_RETURN_RESULT)
+//            mAdapter.restore(selectIndex?:"-1")
         }
     }
 
