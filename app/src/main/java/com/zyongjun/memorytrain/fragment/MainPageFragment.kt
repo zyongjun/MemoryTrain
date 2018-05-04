@@ -8,12 +8,11 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.windhike.fastcoding.base.BaseFragment
 import com.zyongjun.memorytrain.R
-import com.zyongjun.memorytrain.fragment.discovery.DiscoveryTabFragment
+import com.zyongjun.memorytrain.fragment.discovery.CodeTabFragment
 import com.zyongjun.memorytrain.fragment.history.HistoryTabFragment
 import com.zyongjun.memorytrain.fragment.setting.SettingTabFragment
 import com.zyongjun.memorytrain.fragment.train.TrainTabFragment
 import kotlinx.android.synthetic.main.fragment_main.*
-//import kotlinx.android.synthetic.main.tab_button.*
 
 /**
  * author:gzzyj on 2017/9/12 0012.
@@ -24,9 +23,9 @@ data class TabInfo(val tabTextResourceId: Int, val tabIconResourceId: Int, val t
 class MainPageFragment():BaseFragment(){
 
     companion object {
-        val mTabInfos = arrayOf<TabInfo>(TabInfo(R.string.tab_train, R.drawable.selector_tab_home, TrainTabFragment.TAG, TrainTabFragment::class.java),
+        val mTabInfos = arrayOf(TabInfo(R.string.tab_train, R.drawable.selector_tab_home, TrainTabFragment.TAG, TrainTabFragment::class.java),
                 TabInfo(R.string.tab_history, R.drawable.selector_tab_category, HistoryTabFragment.TAG, HistoryTabFragment::class.java),
-                TabInfo(R.string.tab_discovery, R.drawable.selector_tab_cart, DiscoveryTabFragment.TAG, DiscoveryTabFragment::class.java),
+                TabInfo(R.string.tab_code, R.drawable.selector_tab_cart, CodeTabFragment.TAG, CodeTabFragment::class.java),
                 TabInfo(R.string.tab_edit, R.drawable.selector_tab_personal, SettingTabFragment.TAG, SettingTabFragment::class.java))
     }
 
@@ -42,11 +41,6 @@ class MainPageFragment():BaseFragment(){
             (view.findViewById(R.id.tab_text) as TextView).setText(tabInfo.tabTextResourceId)
             tabhost.addTab(tabhost.newTabSpec(tabInfo.tabTag).setIndicator(view),tabInfo.baseTabFragment,null)
         }
-    }
-
-    override fun initView() {
-        super.initView()
-
     }
 
     override fun getLayouId(): Int {

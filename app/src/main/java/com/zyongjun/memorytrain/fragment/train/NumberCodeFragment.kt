@@ -25,7 +25,7 @@ class NumberCodeFragment : BaseFragment() {
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         toolbarBuilder.showLeft(true)
-                .withTitle("编码记忆")
+                .withTitle("数字编码")
                 .show()
         rvCode.layoutManager = GridLayoutManager(activity,3)
         val adapter = NumberCodeAdapter()

@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.zyongjun.memorytrain.R
-import com.zyongjun.memorytrain.fragment.train.NumberCodeFragment
 import com.zyongjun.memorytrain.fragment.train.NumberTrainFragment
 import com.zyongjun.memorytrain.fragment.train.PhoneTrainFragment
 import com.zyongjun.memorytrain.fragment.train.PokerTrainFragment
@@ -36,7 +35,6 @@ class TrainAdapter(val trainList:List<TrainModel>): RecyclerView.Adapter<TrainAd
                     0-> PokerTrainFragment.start(it.context)
                     1-> NumberTrainFragment.start(it.context, 32)
                     2-> PhoneTrainFragment.start(it.context,15)
-                    3-> NumberCodeFragment.start(it.context)
                     else-> PokerTrainFragment.start(it.context)
                 }
             }
