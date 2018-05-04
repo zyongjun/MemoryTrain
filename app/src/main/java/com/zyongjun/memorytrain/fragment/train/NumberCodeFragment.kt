@@ -2,7 +2,7 @@ package com.zyongjun.memorytrain.fragment.train
 
 import android.content.Context
 import android.os.Bundle
-import android.support.v7.widget.GridLayoutManager
+import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import com.windhike.fastcoding.CommonFragmentActivity
 import com.windhike.fastcoding.base.BaseFragment
@@ -27,7 +27,8 @@ class NumberCodeFragment : BaseFragment() {
         toolbarBuilder.showLeft(true)
                 .withTitle("数字编码")
                 .show()
-        rvCode.layoutManager = GridLayoutManager(activity,3)
+//        rvCode.layoutManager = GridLayoutManager(activity,1)
+        rvCode.layoutManager = LinearLayoutManager(activity)
         val adapter = NumberCodeAdapter()
         adapter.initData()
         rvCode.adapter = adapter

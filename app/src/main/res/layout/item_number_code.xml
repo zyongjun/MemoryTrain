@@ -5,32 +5,44 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
-    android:background="@color/white">
+    android:background="@color/app_main_bg">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp">
 
         <ImageView
             android:id="@+id/ivCode"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            app:layout_constraintHorizontal_chainStyle="packed"
             android:src="@mipmap/cn_0"
             app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/ivCodePerson" />
+        <ImageView
+            android:id="@+id/ivCodePerson"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/cn_no"
+            app:layout_constraintLeft_toRightOf="@+id/ivCode"
             app:layout_constraintRight_toRightOf="parent" />
 
         <TextView
             android:id="@+id/tvNumberCode"
-            android:layout_width="wrap_content"
+            android:layout_width="0px"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:background="@color/white"
             android:gravity="center"
             android:textColor="@color/black"
             android:textSize="22sp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="@+id/ivCode"
+            app:layout_constraintRight_toRightOf="@+id/ivCodePerson"
             app:layout_constraintTop_toBottomOf="@+id/ivCode"
+            android:layout_marginBottom="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             tools:text="01" />
     </android.support.constraint.ConstraintLayout>
 

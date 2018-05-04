@@ -9,8 +9,6 @@ import com.zyongjun.memorytrain.R
 import kotlinx.android.synthetic.main.item_number_code.view.*
 import org.json.JSONObject
 
-
-
 /**
  * author:gzzyj on 2017/9/13 0013.
  * email:zhyongjun@windhike.cn
@@ -19,7 +17,6 @@ data class CodeModel(var url:String,var title:String,val imgRes:Int = R.mipmap.c
 class NumberCodeAdapter()
     : RecyclerView.Adapter<NumberCodeAdapter.CardHolder>(){
     val mCodeList = arrayListOf<CodeModel>()
-   
 
     override fun getItemCount(): Int = mCodeList.size
 
@@ -43,7 +40,7 @@ class NumberCodeAdapter()
         mCodeList.clear()
         val jsonObj = JSONObject(json)
         val array = jsonObj.getJSONArray("list")
-        for (i in 0..array.length() - 1) {
+        for (i in 0 until array.length()) {
             val objJson = array.optJSONObject(i)
             le("-----index --$i----url: ${objJson.optString("url")}----title:${objJson.optString("title")}----img--${getImgRes(objJson.optString("url"))}")
             mCodeList.add(CodeModel(objJson.optString("url"),objJson.optString("title"),getImgRes(objJson.optString("url"))))
@@ -51,7 +48,7 @@ class NumberCodeAdapter()
     }
 
     fun getImgRes(url:String):Int {
-        var result = R.mipmap.cn_0
+        var result = R.mipmap.cn_no
         try {
             val field = R.mipmap::class.java.getDeclaredField("cn_$url")
             result = field.get(null) as Int
@@ -250,11 +247,11 @@ class NumberCodeAdapter()
             "    },\n" +
             "    {\n" +
             "      \"url\": \"46\",\n" +
-            "      \"title\": \"46.饲料\"\n" +
+            "      \"title\": \"46.韩红骆驼\"\n" +
             "    },\n" +
             "    {\n" +
             "      \"url\": \"47\",\n" +
-            "      \"title\": \"47.司机\"\n" +
+            "      \"title\": \"47.产品司机\"\n" +
             "    },\n" +
             "    {\n" +
             "      \"url\": \"48\",\n" +
@@ -465,7 +462,47 @@ class NumberCodeAdapter()
             "      \"title\": \"99.玫瑰\"\n" +
             "    },\n" +
             "    {\n" +
-            "      \"url\": \"00\",\n" +
+            "      \"url\": \"100\",\n" +
+            "      \"title\": \"100.郭冬临方便面\"\n" +
+            "    },\n" +
+            "    {\n" +
+            "      \"url\": \"101\",\n" +
+            "      \"title\": \"01.人妖\"\n" +
+            "    },\n" +
+            "    {\n" +
+            "      \"url\": \"102\",\n" +
+            "      \"title\": \"02.成林铃铛\"\n" +
+            "    },\n" +
+            "    {\n" +
+            "      \"url\": \"103\",\n" +
+            "      \"title\": \"03.佛木鱼\"\n" +
+            "    },\n" +
+            "    {\n" +
+            "      \"url\": \"104\",\n" +
+            "      \"title\": \"04.零食\"\n" +
+            "    },\n" +
+            "    {\n" +
+            "      \"url\": \"105\",\n" +
+            "      \"title\": \"05.领舞\"\n" +
+            "    },\n" +
+            "    {\n" +
+            "      \"url\": \"106\",\n" +
+            "      \"title\": \"06.牛奶\"\n" +
+            "    },\n" +
+            "    {\n" +
+            "      \"url\": \"107\",\n" +
+            "      \"title\": \"07.空调\"\n" +
+            "    },\n" +
+            "    {\n" +
+            "      \"url\": \"108\",\n" +
+            "      \"title\": \"08.奥运刘翔\"\n" +
+            "    },\n" +
+            "    {\n" +
+            "      \"url\": \"109\",\n" +
+            "      \"title\": \"09.郭凌菱角\"\n" +
+            "    },\n" +
+            "    {\n" +
+            "      \"url\": \"110\",\n" +
             "      \"title\": \"00.望远镜\"\n" +
             "    }\n" +
             "  ]\n" +
