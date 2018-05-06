@@ -40,7 +40,8 @@ class TrainTabFragment() : BaseFragment() {
         recyclerView.layoutManager = LinearLayoutManager(activity)
         val trainList = arrayListOf(TrainModel(0, "扑克训练"),
                 TrainModel(1, "数字训练"),
-                TrainModel(2, "电话号码训练")
+                TrainModel(2, "电话号码训练"),
+                TrainModel(3,"数字计时")
         )
         recyclerView.adapter = TrainAdapter(trainList)
     }
